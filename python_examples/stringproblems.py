@@ -195,14 +195,21 @@ def tutnese(sentence):
 def __demo():
     text = "Ilkka Kokkarinen"
     print(f"Unique chars of {text} are {unique_chars(text)}.")
+    # Expected output: Unique chars of Ilkka Kokkarinen are Ilka Korine.
     print(f"Removing duplicates gives {eliminate_duplicates(text)}.")
+    # Expected output: Removing duplicates gives Ilka Kokarinen.
     s = "Hello world! How are you?"
     print(f"Original string is : {s!r}")
+    # Expected output: Original string is : 'Hello world! How are you?'
     s = rot13(s)
     print(f"After ROT-13, it is: {s!r}")
+    # Expected output: After ROT-13, it is: 'Uryyb jbeyq! Ubj ner lbh?'
     s = rot13(s)
     print(f"Another ROT-13, it is: {s!r}")
+    # Expected output: Another ROT-13, it is: 'Hello world! How are you?'
     print("\nNext, some conversions to secret languages.")
+    # Expected output: 
+    # Next, some conversions to secret languages.
     sentences = [
         'What does this become? We are eager to see!',
         'Another one, just for fun.',
@@ -210,15 +217,25 @@ def __demo():
     ]
     for sentence in sentences:
         print(f"\nOriginal:   {sentence}")
+        # Expected output for first iteration: 
+        # Original:   What does this become? We are eager to see!
         print(f"Pig latin:  {pig_latin(sentence)}")
+        # Expected output for first iteration: Pig latin:  Atwhay oesday isthay ecomebay? Eway areway eagerway otay eesay!
         print(f"Ubbi dubbi: {ubbi_dubbi(sentence)}")
+        # Expected output for first iteration: Ubbi dubbi: Whubat duboubes thubis bubecubomube? Wube ubarube ubeubaguber tubo subeube!
         print(f"Tutnese:    {tutnese(sentence)}")
+        # Expected output for first iteration: Tutnese:    Washhashatut dudoesus tuthutchisus bubecashomume? Washe aruge eagugerur tuto sussquate!
+        # Note: Tutnese output may vary due to random choices in the algorithm
 
     print("\nFinally, let's check out the anagram tester.")
+    # Expected output: 
+    # Finally, let's check out the anagram tester.
     tater_rater = are_anagrams('tater', 'rater')
     print(f"Are 'tater' and 'rater' anagrams? {tater_rater}")
+    # Expected output: Are 'tater' and 'rater' anagrams? False
     search_chaser = are_anagrams('search', 'chaser')
     print(f"Are 'search' and 'chaser' anagrams? {search_chaser}")
+    # Expected output: Are 'search' and 'chaser' anagrams? True
 
 
 if __name__ == "__main__":
